@@ -36,6 +36,22 @@ const GRAVATARS_QUERY = gql`
     }
   }
 `
+let dollarDisplay = (amount)=>{
+  let floatAmount = parseFloat(amount)
+  amount = Math.floor(amount*100)/100
+  return dollarSymbol+convertFromDollar(amount).toFixed(2)
+}
+//Get yes and no addr from graphql
+let YesAddr = "0x"
+let NoAddr = "0x"
+let OutcomeContribution = (addrs) => {
+  for(let addr in Yesaddrs){
+    //let res = fetch("http://api-rinkeby.etherscan.io/api?module=account&action=tokentx&address=${addr}&sort=asc&apikey=YS1SHN7UV1YGIT9YWUNBYUNSBIVWKC8QR9")
+  }
+  if(res.to == YesAddr){
+      //
+  }
+}
 
 class App extends Component {
   constructor(props) {
