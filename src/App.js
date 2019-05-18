@@ -48,7 +48,7 @@ let dollarDisplay = (amount)=>{
 //Get yes and no addr from graphql
 let YesAddr = "0x"
 let NoAddr = "0x"
-let OutcomeContribution = (addrs) => {
+let OutcomeContribution = (Yesaddrs) => {
   for(let addr in Yesaddrs){
     //let res = fetch("http://api-rinkeby.etherscan.io/api?module=account&action=tokentx&address=${addr}&sort=asc&apikey=YS1SHN7UV1YGIT9YWUNBYUNSBIVWKC8QR9")
   }
