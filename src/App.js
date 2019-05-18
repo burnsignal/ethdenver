@@ -16,6 +16,7 @@ import Header from './components/Header'
 import Error from './components/Error'
 import Gravatars from './components/Gravatars'
 import Filter from './components/Filter'
+const Web3 = require('web3')
 
 if (!process.env.REACT_APP_GRAPHQL_ENDPOINT) {
   throw new Error('REACT_APP_GRAPHQL_ENDPOINT environment variable not defined')
@@ -36,6 +37,9 @@ const GRAVATARS_QUERY = gql`
     }
   }
 `
+//Added Infura, instantiated web3 on rinkeby
+const web3 = new Web3(new Web3.providers.HttpProvider('rinkeby.infura.io/v3/ff6401a2a9a54c7b8c9684c224f55d9d'))
+
 let dollarDisplay = (amount)=>{
   let floatAmount = parseFloat(amount)
   amount = Math.floor(amount*100)/100
