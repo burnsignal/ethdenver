@@ -48,13 +48,26 @@ let dollarDisplay = (amount)=>{
 //Get yes and no addr from graphql
 let YesAddr = "0x"
 let NoAddr = "0x"
+let YesAddrPool = 0 //Initialize votes 
 let OutcomeContribution = (Yesaddrs) => {
   for(let addr in Yesaddrs){
-    //let res = fetch("http://api-rinkeby.etherscan.io/api?module=account&action=tokentx&address=${addr}&sort=asc&apikey=YS1SHN7UV1YGIT9YWUNBYUNSBIVWKC8QR9")
+    let res = fetch("http://api-rinkeby.etherscan.io/api?module=account&action=txlist&address=${addr}&sort=asc&apikey=YS1SHN7UV1YGIT9YWUNBYUNSBIVWKC8QR9")
+    for(let result in res){
+        if(result.to == YesAddr){
+          let ContriValue = result.value
+          YesAddrPool += CalculatedQuadraticVote(ContriValue)
+        }
   }
-  if(res.to == YesAddr){
-      //
-  }
+
+}
+
+let CalculatedQuadraticVote = (ContriValue) => {
+  let DaiValue = ConvertToDai(ContriValue)
+
+}
+
+let DaiValue = (DaiValue) => {
+  let 
 }
 
 class App extends Component {
